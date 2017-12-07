@@ -1,0 +1,91 @@
+.navbar {
+	border-radius: 0;
+	position: fixed;
+	top:0;
+	left:0;
+	right: 0;
+	z-index: 99;
+	box-shadow: 0px 3px 5px rgba(0,0,0,.1);
+}
+
+body {
+	padding-top: 56px;
+}
+
+.jumbotron {
+	margin-bottom: 0;
+	background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+.img-background {
+	background-position: center;
+	background-size: cover;
+}
+.card-subtitle-header {
+	font-size: 0.8rem;
+	color: #999;
+}
+.smaller {
+	font-size: 0.8rem;
+}
+
+.basket-container {
+	position: fixed;
+	z-index: 100;
+	width: 300px;
+	bottom: -250px;
+	right: 20px;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: 250ms;
+}
+.basket-container.opened {
+	bottom: 0;
+}
+.basket-body {
+	height: 250px;
+	position: relative;
+	overflow: scroll;
+}
+.basket-container .basket-furniture {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	transition: 350ms ease-out;
+}
+.basket-container.opened .basket-furniture {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.navbar-nav .nav-item .nav-link {
+	color: rgba(0,0,0,0.7) ;
+}
+.navbar-nav .nav-item .nav-link:hover {
+	color: rgba(0,0,0,1) ;
+}
+.nav-item.active .nav-link{
+	font-weight: bolder;
+}
+.navbar-nav .nav-item .nav-link.disabled {
+	color: rgba(0,0,0,.3);
+}
+.navbar-nav .nav-item .nav-link.disabled:hover {
+	color: rgba(0,0,0,.3);
+}
+
+.subtitle {
+	color: #999;
+	font-size: 0.9em;
+}
+.gray {
+	color: #999;
+}
+
+.modal.show {
+	display: block;
+	background: rgba(0,0,0,0.3);
+}

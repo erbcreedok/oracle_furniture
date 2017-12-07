@@ -1,0 +1,55 @@
+<div class="container" ng-if="basket.length">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h3>
+                Ваша корзина
+                <a class="subtitle ml-2 font-weight-normal" style="font-size: 0.9rem" href="javascript:void(0)" ng-click="onClearBasket()">очистить корзину</a>
+            </h3>
+        </div>
+    </div>
+    <form class="row">
+        <div class="col-12">
+            <div class="basket-body" style="height: auto;">
+                <div ng-if="basket.length" class="basket-furnitures">
+                    <div ng-repeat="furniture in basket track by $index" class="p-1 clearfix basket-furniture">
+                        <div class="clearfix">
+                            <img class="img-thumbnail float-left mr-2" src="{{ furniture.furniture_image }}" width="50px">
+                            <div class="float-left">
+                                <span> {{ furniture.furniture_name.slice(0,15) }}...</span> <br>
+                                <span class="card-subtitle-header">{{ furniture.furniture_price }} ₸</span>
+                            </div>
+                            <button class="btn btn-danger smaller float-right mt-2" ng-click="onRemoveFromBasket($index)">Убрать</button>
+                        </div>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 my-2">
+            <p class="mb-1"><span class="subtitle">кол-во объектов: </span> {{ basket.length }}</p>
+            <p><span class="subtitle">Полная стоймость: </span> {{ totalPrice() }} ₸</p>
+        </div>
+        <div class="col-md-6 col-12 mt-2">
+            <div class="form-group">
+                <label for="clientName">Ваше имя</label>
+                <input type="text" class="form-control" id="clientName" placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+                <label for="clientPhone">Ваш телефон</label>
+                <input type="text" class="form-control" id="clientPhone" placeholder="Ваше номер телефона">
+                <small class="form-text text-muted">Ваш телефон остаётся сторого конфиденциальным и не будет распространена третьим лицам</small>
+            </div>
+            <div class="form-group">
+                <label for="clientAddress">Адрес для доставки</label>
+                <textarea class="form-control" id="clientAddress" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Оформить заказ</button>
+        </div>
+    </form>
+</div>
+<div class="container mb-5 py-5" ng-if="!basket.length">
+    <h4 class="text-center gray">
+        Ваша корзина пуста
+    </h4>
+    <p class="text-center small">Вернутся к <a href="#/">каталогу</a></p>
+</div>
